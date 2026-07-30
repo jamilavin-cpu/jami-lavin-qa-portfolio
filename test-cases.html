@@ -72,377 +72,525 @@ Jami Lavin
 
     <details class="test-case">
 
-       <summary>
-    TC-001 | Reward Submission
+<summary>
+    TC-001 | Reward Submission End-to-End Workflow
     <span class="badge functional">Functional</span>
 </summary>
 
-        <div class="test-content">
+<div class="test-content">
 
-            <table>
+<table>
 
-                <tr>
-                    <th>Test Case ID</th>
-                    <td>TC-001</td>
-                </tr>
+<tr>
+<th>Test Case ID</th>
+<td>TC-001</td>
+</tr>
 
-                <tr>
-                    <th>Feature</th>
-                    <td>Reward Submission</td>
-                </tr>
+<tr>
+<th>Feature</th>
+<td>Reward Submission Workflow</td>
+</tr>
 
-                <tr>
-                    <th>Priority</th>
-                    <td>High</td>
-                </tr>
+<tr>
+<th>Priority</th>
+<td>High</td>
+</tr>
 
-                <tr>
-                    <th>Test Type</th>
-                    <td>Functional</td>
-                </tr>
+<tr>
+<th>Test Type</th>
+<td>Functional / End-to-End</td>
+</tr>
 
-            </table>
-
-
-            <table>
-
-                <tr>
-                    <th>Step</th>
-                    <th>Expected Result</th>
-                </tr>
-
-                <tr>
-                    <td>Navigate to Rewards page</td>
-                    <td>Rewards page loads successfully</td>
-                </tr>
-
-                <tr>
-                    <td>Enter valid reward information</td>
-                    <td>Information is accepted</td>
-                </tr>
-
-                <tr>
-                    <td>Submit request</td>
-                    <td>Confirmation message is displayed</td>
-                </tr>
-
-            </table>
-
-            <p class="passed">
-                ✓ Passed
-            </p>
-
-        </div>
-
-    </details>
+</table>
 
 
+<table>
 
-<details class="test-case">
-
-    <summary>
-        TC-002 | Invalid Reward Information
-        <span class="badge negative">Negative</span>
-    </summary>
-
-
-    <div class="test-content">
+<tr>
+<th>Step</th>
+<th>Expected Result</th>
+</tr>
 
 
-        <table>
-
-            <tr>
-                <th>Test Case ID</th>
-                <td>TC-002</td>
-            </tr>
-
-            <tr>
-                <th>Feature</th>
-                <td>Reward Validation</td>
-            </tr>
-
-            <tr>
-                <th>Priority</th>
-                <td>High</td>
-            </tr>
-
-            <tr>
-                <th>Test Type</th>
-                <td>Negative</td>
-            </tr>
-
-        </table>
+<tr>
+<td>Navigate to the reward submission workflow</td>
+<td>Reward submission page loads successfully and displays required fields based on business requirements.</td>
+</tr>
 
 
-
-        <table>
-
-            <tr>
-                <th>Step</th>
-                <th>Expected Result</th>
-            </tr>
+<tr>
+<td>Enter valid reward information including required user and submission details</td>
+<td>System accepts valid information and allows the user to continue.</td>
+</tr>
 
 
-            <tr>
-                <td>Leave required information blank</td>
-                <td>Validation message is displayed</td>
-            </tr>
+<tr>
+<td>Submit reward request</td>
+<td>Reward request is created successfully and assigned the appropriate status.</td>
+</tr>
 
 
-            <tr>
-                <td>Enter invalid reward information</td>
-                <td>Invalid data is rejected</td>
-            </tr>
+<tr>
+<td>Verify confirmation message and submission details</td>
+<td>User receives confirmation and submitted information matches the entered data.</td>
+</tr>
 
 
-            <tr>
-                <td>Attempt submission</td>
-                <td>Request is not submitted until valid information is provided</td>
-            </tr>
+<tr>
+<td>Review submitted reward in reward history or tracking view</td>
+<td>Submitted reward is displayed accurately with correct status, date, and associated information.</td>
+</tr>
 
 
-        </table>
+</table>
 
 
-        <p class="passed">
-            ✓ Passed
-        </p>
+<table>
+
+<tr>
+<th>QA Focus Areas</th>
+<td>
+Business rule validation, workflow testing, data integrity verification, end-to-end process validation, regression coverage
+</td>
+</tr>
+
+</table>
 
 
-    </div>
+<p class="passed">
+✓ Passed
+</p>
 
+
+</div>
 
 </details>
 
 
+<details class="test-case">
+
+<summary>
+    TC-002 | Reward Validation and Error Handling
+    <span class="badge negative">Negative</span>
+</summary>
+
+
+<div class="test-content">
+
+
+<table>
+
+<tr>
+<th>Test Case ID</th>
+<td>TC-002</td>
+</tr>
+
+<tr>
+<th>Feature</th>
+<td>Reward Validation Rules</td>
+</tr>
+
+<tr>
+<th>Priority</th>
+<td>High</td>
+</tr>
+
+<tr>
+<th>Test Type</th>
+<td>Negative / Validation</td>
+</tr>
+
+</table>
+
+
+
+<table>
+
+<tr>
+<th>Step</th>
+<th>Expected Result</th>
+</tr>
+
+
+<tr>
+<td>Attempt to submit a reward request with required fields left blank</td>
+<td>System identifies missing information and displays appropriate validation messages.</td>
+</tr>
+
+
+<tr>
+<td>Enter invalid data formats or unsupported values</td>
+<td>System prevents invalid information from being submitted and provides clear guidance to the user.</td>
+</tr>
+
+
+<tr>
+<td>Enter values outside defined business rules or acceptable limits</td>
+<td>System enforces business rules and prevents invalid reward requests from being processed.</td>
+</tr>
+
+
+<tr>
+<td>Attempt to submit duplicate or previously processed reward information</td>
+<td>System identifies potential duplicate submissions or follows defined duplicate handling rules.</td>
+</tr>
+
+
+<tr>
+<td>Correct validation errors and resubmit request</td>
+<td>System accepts valid information and allows successful submission after corrections are made.</td>
+</tr>
+
+
+</table>
+
+
+
+<table>
+
+<tr>
+<th>QA Focus Areas</th>
+<td>
+Negative testing, business rule validation, data integrity, error handling, user experience validation
+</td>
+</tr>
+
+</table>
+
+
+
+<p class="passed">
+✓ Passed
+</p>
+
+
+</div>
+
+</details>
 
 <details class="test-case">
 
-    <summary>
-        TC-003 | Contact Form Submission
-        <span class="badge functional">Functional</span>
-    </summary>
+<summary>
+    TC-003 | Customer Request Workflow Validation
+    <span class="badge functional">Functional</span>
+</summary>
 
 
-    <div class="test-content">
+<div class="test-content">
 
 
-        <table>
+<table>
 
-            <tr>
-                <th>Test Case ID</th>
-                <td>TC-003</td>
-            </tr>
+<tr>
+<th>Test Case ID</th>
+<td>TC-003</td>
+</tr>
 
-            <tr>
-                <th>Feature</th>
-                <td>Contact Form</td>
-            </tr>
+<tr>
+<th>Feature</th>
+<td>Customer Request Submission Workflow</td>
+</tr>
 
-            <tr>
-                <th>Priority</th>
-                <td>Medium</td>
-            </tr>
+<tr>
+<th>Priority</th>
+<td>High</td>
+</tr>
 
-            <tr>
-                <th>Test Type</th>
-                <td>Functional</td>
-            </tr>
+<tr>
+<th>Test Type</th>
+<td>Functional / Workflow</td>
+</tr>
 
-        </table>
-
-
-
-        <table>
-
-            <tr>
-                <th>Step</th>
-                <th>Expected Result</th>
-            </tr>
+</table>
 
 
-            <tr>
-                <td>Navigate to Contact page</td>
-                <td>Contact form loads successfully</td>
-            </tr>
+
+<table>
+
+<tr>
+<th>Step</th>
+<th>Expected Result</th>
+</tr>
 
 
-            <tr>
-                <td>Enter valid name, email, and message</td>
-                <td>Information is accepted</td>
-            </tr>
+<tr>
+<td>Navigate to the customer request submission page</td>
+<td>Page loads successfully and displays required fields and instructions according to requirements.</td>
+</tr>
 
 
-            <tr>
-                <td>Click Submit button</td>
-                <td>Confirmation message is displayed</td>
-            </tr>
+<tr>
+<td>Enter valid customer information and request details</td>
+<td>System accepts valid information and allows the user to proceed.</td>
+</tr>
 
 
-        </table>
+<tr>
+<td>Submit completed request</td>
+<td>Request is successfully created and assigned the appropriate initial status.</td>
+</tr>
 
 
-        <p class="passed">
-            ✓ Passed
-        </p>
+<tr>
+<td>Verify submitted request details</td>
+<td>Captured information matches the data entered by the user and is displayed accurately.</td>
+</tr>
 
 
-    </div>
+<tr>
+<td>Attempt submission with incomplete or invalid information</td>
+<td>System prevents submission and provides clear validation messages identifying required corrections.</td>
+</tr>
 
-    </details>
 
+<tr>
+<td>Confirm request is available for the next workflow step</td>
+<td>Created request is available for processing, review, or follow-up based on defined business workflow.</td>
+</tr>
+
+
+</table>
+
+
+
+<table>
+
+<tr>
+<th>QA Focus Areas</th>
+<td>
+Workflow validation, requirements verification, data integrity, negative testing, user experience validation
+</td>
+</tr>
+
+</table>
+
+
+
+<p class="passed">
+✓ Passed
+</p>
+
+
+</div>
+
+</details>
    <details class="test-case">
 
-    <summary>
-        TC-004 | Reward History Regression Validation
-        <span class="badge regression">Regression</span>
-    </summary>
+<summary>
+    TC-004 | Reward History Regression Validation
+    <span class="badge regression">Regression</span>
+</summary>
 
 
-    <div class="test-content">
+<div class="test-content">
 
 
-        <table>
+<table>
 
-            <tr>
-                <th>Test Case ID</th>
-                <td>TC-004</td>
-            </tr>
+<tr>
+<th>Test Case ID</th>
+<td>TC-004</td>
+</tr>
 
-            <tr>
-                <th>Feature</th>
-                <td>Reward History</td>
-            </tr>
+<tr>
+<th>Feature</th>
+<td>Reward History and Record Retrieval</td>
+</tr>
 
-            <tr>
-                <th>Priority</th>
-                <td>Medium</td>
-            </tr>
+<tr>
+<th>Priority</th>
+<td>High</td>
+</tr>
 
-            <tr>
-                <th>Test Type</th>
-                <td>Regression</td>
-            </tr>
+<tr>
+<th>Test Type</th>
+<td>Regression / Data Validation</td>
+</tr>
 
-        </table>
-
-
-
-        <table>
-
-            <tr>
-                <th>Step</th>
-                <th>Expected Result</th>
-            </tr>
+</table>
 
 
-            <tr>
-                <td>Navigate to Reward History page</td>
-                <td>Previously submitted rewards are displayed</td>
-            </tr>
+
+<table>
+
+<tr>
+<th>Step</th>
+<th>Expected Result</th>
+</tr>
 
 
-            <tr>
-                <td>Verify reward details including status and date</td>
-                <td>Reward information matches submitted data</td>
-            </tr>
+<tr>
+<td>Navigate to the Reward History page after a system update or release</td>
+<td>Reward History loads successfully and existing functionality remains available.</td>
+</tr>
 
 
-            <tr>
-                <td>Select a previous reward record</td>
-                <td>Reward details display successfully</td>
-            </tr>
+<tr>
+<td>Search for previously submitted reward records</td>
+<td>Historical records are retrieved successfully using available search or filtering options.</td>
+</tr>
 
 
-        </table>
+<tr>
+<td>Verify reward details including status, submission date, and user information</td>
+<td>Displayed information matches the original submitted data and maintains data integrity.</td>
+</tr>
 
 
-        <p class="passed">
-            ✓ Passed
-        </p>
+<tr>
+<td>Select an existing reward record</td>
+<td>Detailed reward information displays correctly without errors.</td>
+</tr>
 
 
-    </div>
+<tr>
+<td>Validate different reward statuses throughout the workflow lifecycle</td>
+<td>Statuses accurately reflect the current state of each reward request.</td>
+</tr>
 
+
+<tr>
+<td>Compare historical records before and after system changes</td>
+<td>No unintended changes, data loss, or regression issues are identified.</td>
+</tr>
+
+
+</table>
+
+
+
+<table>
+
+<tr>
+<th>QA Focus Areas</th>
+<td>
+Regression testing, data integrity validation, release verification, workflow validation, defect prevention
+</td>
+</tr>
+
+</table>
+
+
+
+<p class="passed">
+✓ Passed
+</p>
+
+
+</div>
 
 </details>
 
 <details class="test-case">
 
-    <summary>
-        TC-005 | User Approval Workflow Validation
-        <span class="badge uat">UAT</span>
-    </summary>
+<summary>
+    TC-005 | User Approval Workflow Validation
+    <span class="badge uat">UAT</span>
+</summary>
 
 
-    <div class="test-content">
+<div class="test-content">
 
 
-        <table>
+<table>
 
-            <tr>
-                <th>Test Case ID</th>
-                <td>TC-005</td>
-            </tr>
+<tr>
+<th>Test Case ID</th>
+<td>TC-005</td>
+</tr>
 
-            <tr>
-                <th>Feature</th>
-                <td>User Approval Workflow</td>
-            </tr>
+<tr>
+<th>Feature</th>
+<td>User Approval Workflow</td>
+</tr>
 
-            <tr>
-                <th>Priority</th>
-                <td>High</td>
-            </tr>
+<tr>
+<th>Priority</th>
+<td>High</td>
+</tr>
 
-            <tr>
-                <th>Test Type</th>
-                <td>UAT</td>
-            </tr>
+<tr>
+<th>Test Type</th>
+<td>UAT / Workflow Validation</td>
+</tr>
 
-        </table>
-
-
-
-        <table>
-
-            <tr>
-                <th>Step</th>
-                <th>Expected Result</th>
-            </tr>
-
-
-            <tr>
-                <td>Submit a request requiring approval</td>
-                <td>Request is created successfully and assigned the correct status</td>
-            </tr>
-
-
-            <tr>
-                <td>Reviewer opens submitted request</td>
-                <td>Reviewer can view request details and required information</td>
-            </tr>
-
-
-            <tr>
-                <td>Approve or reject the request</td>
-                <td>Status updates correctly and user receives notification</td>
-            </tr>
-
-
-        </table>
-
-
-        <p class="passed">
-            ✓ Passed
-        </p>
-
-
-    </div>
+</table>
 
 
 
+<table>
 
+<tr>
+<th>Step</th>
+<th>Expected Result</th>
+</tr>
+
+
+<tr>
+<td>Submit a request requiring approval</td>
+<td>Request is created successfully with the correct initial status and assigned to the appropriate approval workflow.</td>
+</tr>
+
+
+<tr>
+<td>Verify submitted request details from the reviewer perspective</td>
+<td>Reviewer can access the request and view all required information needed to make an approval decision.</td>
+</tr>
+
+
+<tr>
+<td>Validate user permissions and workflow access</td>
+<td>Users can only perform actions allowed by their assigned role and workflow permissions.</td>
+</tr>
+
+
+<tr>
+<td>Approve submitted request</td>
+<td>Request status updates correctly and the appropriate downstream workflow actions are triggered.</td>
+</tr>
+
+
+<tr>
+<td>Reject submitted request</td>
+<td>Request status updates correctly and required rejection details or comments are captured according to business rules.</td>
+</tr>
+
+
+<tr>
+<td>Verify notifications and status communication</td>
+<td>Relevant users receive accurate notifications reflecting the current workflow state.</td>
+</tr>
+
+
+<tr>
+<td>Review completed workflow record</td>
+<td>Approval history and status changes are accurately maintained for audit and tracking purposes.</td>
+</tr>
+
+
+</table>
+
+
+
+<table>
+
+<tr>
+<th>QA Focus Areas</th>
+<td>
+UAT validation, workflow testing, role-based access validation, business process verification, audit trail validation
+</td>
+</tr>
+
+</table>
+
+
+
+<p class="passed">
+✓ Passed
+</p>
+
+
+</div>
 
 </details>
 
@@ -453,11 +601,18 @@ Jami Lavin
     </h2>
 
     <p>
-        I design test cases that are clear, repeatable, and aligned with business
-        requirements. My goal is to provide comprehensive coverage while making
-        execution straightforward for QA teams, business users, and stakeholders.
-        Each test case focuses on validating expected behavior, identifying risks,
-        and supporting consistent, high-quality software releases.
+        I design test cases that balance business requirements, user experience,
+        and technical risk. My approach focuses on validating complete workflows,
+        identifying potential failure points, and ensuring data integrity across
+        applications.
+    </p>
+
+    <p>
+        Each test case incorporates positive and negative scenarios, business rule
+        validation, regression considerations, and workflow verification to support
+        reliable software releases. My goal is to create actionable test coverage
+        that helps teams identify issues early and deliver quality solutions with
+        confidence.
     </p>
 
 </section>
