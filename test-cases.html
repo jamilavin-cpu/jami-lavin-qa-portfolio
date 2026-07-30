@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Test Cases | Jami Lavin</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+Jami Lavin
+<span>Senior QA Analyst</span>
+</div>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="experience.html">Career</a></li>
+<li><a href="qa-lab.html">QA Lab</a></li>
+<li><a href="resume.html">Resume</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<section class="artifact-hero">
+
+    <div class="section-title">
+
+        <p class="section-label">
+            QA ARTIFACT
+        </p>
+
+        <h1>
+            Sample Test Cases
+        </h1>
+
+        <p class="qa-intro">
+            The following examples demonstrate how I design manual test cases 
+            to validate functionality, business rules, and end-to-end workflows. 
+            These examples have been adapted to protect confidential information 
+            while reflecting the structure and level of detail used in real-world testing.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="test-cases">
+
+    <details class="test-case">
+
+       <summary>
+    TC-001 | Reward Submission
+    <span class="badge functional">Functional</span>
+</summary>
+
+        <div class="test-content">
+
+            <table>
+
+                <tr>
+                    <th>Test Case ID</th>
+                    <td>TC-001</td>
+                </tr>
+
+                <tr>
+                    <th>Feature</th>
+                    <td>Reward Submission</td>
+                </tr>
+
+                <tr>
+                    <th>Priority</th>
+                    <td>High</td>
+                </tr>
+
+                <tr>
+                    <th>Test Type</th>
+                    <td>Functional</td>
+                </tr>
+
+            </table>
+
+
+            <table>
+
+                <tr>
+                    <th>Step</th>
+                    <th>Expected Result</th>
+                </tr>
+
+                <tr>
+                    <td>Navigate to Rewards page</td>
+                    <td>Rewards page loads successfully</td>
+                </tr>
+
+                <tr>
+                    <td>Enter valid reward information</td>
+                    <td>Information is accepted</td>
+                </tr>
+
+                <tr>
+                    <td>Submit request</td>
+                    <td>Confirmation message is displayed</td>
+                </tr>
+
+            </table>
+
+            <p class="passed">
+                ✓ Passed
+            </p>
+
+        </div>
+
+    </details>
+
+
+
+<details class="test-case">
+
+    <summary>
+        TC-002 | Invalid Reward Information
+        <span class="badge negative">Negative</span>
+    </summary>
+
+
+    <div class="test-content">
+
+
+        <table>
+
+            <tr>
+                <th>Test Case ID</th>
+                <td>TC-002</td>
+            </tr>
+
+            <tr>
+                <th>Feature</th>
+                <td>Reward Validation</td>
+            </tr>
+
+            <tr>
+                <th>Priority</th>
+                <td>High</td>
+            </tr>
+
+            <tr>
+                <th>Test Type</th>
+                <td>Negative</td>
+            </tr>
+
+        </table>
+
+
+
+        <table>
+
+            <tr>
+                <th>Step</th>
+                <th>Expected Result</th>
+            </tr>
+
+
+            <tr>
+                <td>Leave required information blank</td>
+                <td>Validation message is displayed</td>
+            </tr>
+
+
+            <tr>
+                <td>Enter invalid reward information</td>
+                <td>Invalid data is rejected</td>
+            </tr>
+
+
+            <tr>
+                <td>Attempt submission</td>
+                <td>Request is not submitted until valid information is provided</td>
+            </tr>
+
+
+        </table>
+
+
+        <p class="passed">
+            ✓ Passed
+        </p>
+
+
+    </div>
+
+
+</details>
+
+
+
+<details class="test-case">
+
+    <summary>
+        TC-003 | Contact Form Submission
+        <span class="badge functional">Functional</span>
+    </summary>
+
+
+    <div class="test-content">
+
+
+        <table>
+
+            <tr>
+                <th>Test Case ID</th>
+                <td>TC-003</td>
+            </tr>
+
+            <tr>
+                <th>Feature</th>
+                <td>Contact Form</td>
+            </tr>
+
+            <tr>
+                <th>Priority</th>
+                <td>Medium</td>
+            </tr>
+
+            <tr>
+                <th>Test Type</th>
+                <td>Functional</td>
+            </tr>
+
+        </table>
+
+
+
+        <table>
+
+            <tr>
+                <th>Step</th>
+                <th>Expected Result</th>
+            </tr>
+
+
+            <tr>
+                <td>Navigate to Contact page</td>
+                <td>Contact form loads successfully</td>
+            </tr>
+
+
+            <tr>
+                <td>Enter valid name, email, and message</td>
+                <td>Information is accepted</td>
+            </tr>
+
+
+            <tr>
+                <td>Click Submit button</td>
+                <td>Confirmation message is displayed</td>
+            </tr>
+
+
+        </table>
+
+
+        <p class="passed">
+            ✓ Passed
+        </p>
+
+
+    </div>
+
+    </details>
+
+   <details class="test-case">
+
+    <summary>
+        TC-004 | Reward History Regression Validation
+        <span class="badge regression">Regression</span>
+    </summary>
+
+
+    <div class="test-content">
+
+
+        <table>
+
+            <tr>
+                <th>Test Case ID</th>
+                <td>TC-004</td>
+            </tr>
+
+            <tr>
+                <th>Feature</th>
+                <td>Reward History</td>
+            </tr>
+
+            <tr>
+                <th>Priority</th>
+                <td>Medium</td>
+            </tr>
+
+            <tr>
+                <th>Test Type</th>
+                <td>Regression</td>
+            </tr>
+
+        </table>
+
+
+
+        <table>
+
+            <tr>
+                <th>Step</th>
+                <th>Expected Result</th>
+            </tr>
+
+
+            <tr>
+                <td>Navigate to Reward History page</td>
+                <td>Previously submitted rewards are displayed</td>
+            </tr>
+
+
+            <tr>
+                <td>Verify reward details including status and date</td>
+                <td>Reward information matches submitted data</td>
+            </tr>
+
+
+            <tr>
+                <td>Select a previous reward record</td>
+                <td>Reward details display successfully</td>
+            </tr>
+
+
+        </table>
+
+
+        <p class="passed">
+            ✓ Passed
+        </p>
+
+
+    </div>
+
+
+</details>
+
+<details class="test-case">
+
+    <summary>
+        TC-005 | User Approval Workflow Validation
+        <span class="badge uat">UAT</span>
+    </summary>
+
+
+    <div class="test-content">
+
+
+        <table>
+
+            <tr>
+                <th>Test Case ID</th>
+                <td>TC-005</td>
+            </tr>
+
+            <tr>
+                <th>Feature</th>
+                <td>User Approval Workflow</td>
+            </tr>
+
+            <tr>
+                <th>Priority</th>
+                <td>High</td>
+            </tr>
+
+            <tr>
+                <th>Test Type</th>
+                <td>UAT</td>
+            </tr>
+
+        </table>
+
+
+
+        <table>
+
+            <tr>
+                <th>Step</th>
+                <th>Expected Result</th>
+            </tr>
+
+
+            <tr>
+                <td>Submit a request requiring approval</td>
+                <td>Request is created successfully and assigned the correct status</td>
+            </tr>
+
+
+            <tr>
+                <td>Reviewer opens submitted request</td>
+                <td>Reviewer can view request details and required information</td>
+            </tr>
+
+
+            <tr>
+                <td>Approve or reject the request</td>
+                <td>Status updates correctly and user receives notification</td>
+            </tr>
+
+
+        </table>
+
+
+        <p class="passed">
+            ✓ Passed
+        </p>
+
+
+    </div>
+
+
+
+
+
+</details>
+
+<section class="case-section">
+
+    <h2>
+        Test Design Philosophy
+    </h2>
+
+    <p>
+        I design test cases that are clear, repeatable, and aligned with business
+        requirements. My goal is to provide comprehensive coverage while making
+        execution straightforward for QA teams, business users, and stakeholders.
+        Each test case focuses on validating expected behavior, identifying risks,
+        and supporting consistent, high-quality software releases.
+    </p>
+
+</section>
+
+<div class="hero-buttons">
+
+<a href="qa-lab.html" class="button secondary">
+
+← Back to QA Lab
+
+</a>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>
+            Jami Lavin
+        </h3>
+
+        <p>
+            Senior QA Analyst | ISTQB Certified | CSM
+        </p>
+
+        <div class="footer-links">
+
+            <a href="resume.html">
+                Resume
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="qa-lab.html">
+                QA Lab
+            </a>
+
+        </div>
+
+        <p class="footer-copy">
+            © 2026 Jami Lavin. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
