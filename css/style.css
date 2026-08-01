@@ -986,6 +986,151 @@ header {
     color: white;
 }
 
+
+/* Azure DevOps-style test cases */
+
+.test-work-item {
+    background: white;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 28px 34px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.test-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.test-title::-webkit-details-marker {
+    display: none;
+}
+
+.test-title::after {
+    content: "▾";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-left: 16px;
+}
+
+.test-work-item[open] .test-title::after {
+    content: "▴";
+}
+
+.test-info {
+    flex: 1;
+}
+
+.test-id {
+    margin: 0 0 6px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.test-info h2 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.test-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.test-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: #f8fafc;
+    padding: 24px;
+    margin: 25px 0;
+    border-radius: 12px;
+}
+
+.test-summary-grid strong {
+    color: var(--primary);
+}
+
+.test-summary-grid p {
+    margin-top: 6px;
+}
+
+.test-section {
+    margin-top: 30px;
+}
+
+.test-section h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.test-section ul {
+    padding-left: 22px;
+}
+
+.test-section li {
+    margin-bottom: 8px;
+}
+
+.test-step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.step-number {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.step-content h4 {
+    color: var(--primary);
+    margin: 0 0 6px;
+}
+
+.step-content p {
+    margin: 0 0 16px;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .test-title {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .test-status {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .test-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .test-step {
+        grid-template-columns: 1fr;
+    }
+}
+
 .bug-id {
 
     font-weight:700;
