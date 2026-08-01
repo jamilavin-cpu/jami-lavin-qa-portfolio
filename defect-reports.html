@@ -68,54 +68,153 @@ Jami Lavin
 
 
 
-<section class="artifact">
+<section class="defect-work-item">
 
-<div class="artifact-card">
-
-<h2>BUG-1045</h2>
-
-<h3>Reward Status Does Not Update After Processing</h3>
-
-<div class="artifact-details">
+<div class="defect-title">
 
 <div>
+<p class="bug-id">🐞 BUG-1045</p>
 
-<strong>Application</strong>
-
-<p>Reward Management Platform</p>
+<h2>
+Reward Status Does Not Update After Processing
+</h2>
 
 </div>
 
-<div>
+<div class="defect-status">
+<span class="severity high">
+Severity 2 - High
+</span>
 
+<span class="state">
+Resolved
+</span>
+
+</div>
+
+</div>
+
+
+<div class="work-item-grid">
+
+
+<div>
+<strong>Work Item Type</strong>
+<p>Bug</p>
+</div>
+
+
+<div>
+<strong>Area Path</strong>
+<p>Reward Management</p>
+</div>
+
+
+<div>
 <strong>Tool</strong>
-
 <p>Azure DevOps</p>
-
 </div>
+
 
 <div>
+<strong>Priority</strong>
+<p>High</p>
+</div>
 
-<strong>Severity</strong>
-
-<p class="high">High</p>
 
 </div>
 
-<div>
 
-<strong>Status</strong>
+<div class="defect-section">
 
-<p class="passed">Resolved</p>
+<h3>Description</h3>
+
+<p>
+Reward status does not update after successful processing. 
+The transaction completes successfully, but the application continues displaying an outdated status.
+</p>
 
 </div>
 
-</div>
+
+
+<div class="defect-section">
+
+<h3>Environment</h3>
+
+<ul>
+<li>Windows 11</li>
+<li>Google Chrome</li>
+<li>QA Environment</li>
+</ul>
 
 </div>
+
+
+
+<div class="defect-section">
+
+<h3>Steps to Reproduce</h3>
+
+<ol>
+<li>Log into the Reward Management application.</li>
+<li>Search for a customer with a completed reward transaction.</li>
+<li>Navigate to reward details.</li>
+<li>Review displayed reward status.</li>
+</ol>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Expected Result</h3>
+
+<p>
+Reward status should display <strong>Available</strong> after successful processing.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Actual Result</h3>
+
+<p>
+Reward status remains <strong>Pending</strong> after processing completes.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Business Impact</h3>
+
+<p>
+Incorrect status information may cause duplicate customer requests and increase support workload.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Resolution Notes</h3>
+
+<p>
+Development corrected the status mapping issue. QA verified the fix through functional and regression testing.
+</p>
+
+</div>
+
 
 </section>
-
 
 
 <section class="artifact">

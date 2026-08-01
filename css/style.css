@@ -267,7 +267,15 @@ h2 {
 }
 
 
+.resume-download {
 
+    display: flex;
+
+    justify-content: center;
+
+    margin: 40px 0 60px;
+
+}
 
 .button:hover {
 
@@ -585,7 +593,7 @@ footer {
 
 }
 
-.copyright {
+.footer-copy {
 
     font-size: 14px;
 
@@ -618,19 +626,16 @@ footer {
 
     padding:40px 8%;
 
-    max-width:900px;
-
-    margin:auto;
-
 }
 
 
 .test-cases .test-case {
 
-    margin-bottom:20px;
+    max-width:900px;
+
+    margin:0 auto 20px;
 
 }
-
 .badge.regression {
     background: #E0E7FF;
     color: #3730A3;
@@ -855,7 +860,99 @@ header {
 
 }
 
+.defect-work-item {
 
+    background:white;
+    border-radius:16px;
+    padding:40px;
+    margin:40px auto;
+    max-width:1000px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+.defect-title {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    border-bottom:1px solid #e2e8f0;
+    padding-bottom:25px;
+
+}
+
+
+.bug-id {
+
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:10px;
+
+}
+
+
+.defect-status {
+
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+
+}
+
+
+.state {
+
+    background:#dcfce7;
+    color:#166534;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+
+}
+
+
+.work-item-grid {
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    background:#f8fafc;
+    padding:25px;
+    margin:25px 0;
+
+}
+
+
+.work-item-grid strong {
+
+    color:var(--primary);
+
+}
+
+
+.defect-section {
+
+    margin-top:30px;
+
+}
+
+
+.defect-section h3 {
+
+    color:var(--primary);
+    margin-bottom:10px;
+
+}
+
+
+.defect-section li {
+
+    margin-bottom:8px;
+
+}
 
 .plan-grid {
 
@@ -1222,7 +1319,11 @@ header {
 
 .case-section {
 
-    margin-top:70px;
+    max-width:900px;
+
+    margin:60px auto;
+
+    padding:40px 8%;
 
 }
 
