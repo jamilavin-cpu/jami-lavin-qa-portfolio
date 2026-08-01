@@ -873,16 +873,118 @@ header {
 
 
 .defect-title {
-
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:20px;
-    border-bottom:1px solid #e2e8f0;
-    padding-bottom:25px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px 0;
 }
 
+.defect-title::-webkit-details-marker {
+    display: none;
+}
+
+.defect-info h2 {
+    margin: 4px 0 0;
+    color: var(--primary);
+}
+
+.defect-info p {
+    margin: 0;
+}
+
+.defect-title::after {
+    content: "▾";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-left: 16px;
+}
+
+.defect-work-item[open] .defect-title::after {
+    content: "▴";
+}
+
+/* Defect page bottom sections */
+
+.artifact {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
+.artifact > h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.artifact .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.artifact .skill-card {
+    background: white;
+    padding: 24px 20px;
+    border-radius: 14px;
+    border-top: 3px solid var(--accent);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.artifact .skill-card h3 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--primary);
+}
+
+.portfolio-note {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 22px 26px;
+    background: white;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    line-height: 1.7;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 60px;
+}
+
+@media (max-width: 768px) {
+    .artifact .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artifact {
+        padding: 0 20px;
+    }
+}
+
+
+.hero-buttons .button.secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    background: white;
+}
+
+.hero-buttons .button.secondary:hover {
+    background: var(--primary);
+    color: white;
+}
 
 .bug-id {
 
@@ -961,6 +1063,70 @@ header {
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
     gap:25px;
+
+}
+
+.defect-overview {
+
+    padding:60px 8%;
+
+}
+
+
+.defect-summary-card {
+
+    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:center;
+
+}
+
+
+.defect-summary-card h2 {
+
+    color:var(--primary);
+    margin-bottom:20px;
+
+}
+
+
+.defect-summary-card p {
+
+    line-height:1.7;
+
+}
+
+
+.defect-summary-grid {
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin:30px 0;
+
+}
+
+
+.defect-summary-grid div {
+
+    background:#f8fafc;
+    padding:20px;
+    border-radius:12px;
+
+}
+
+
+@media(max-width:768px){
+
+.defect-summary-grid {
+
+grid-template-columns:1fr;
+
+}
 
 }
 
@@ -1059,6 +1225,107 @@ header {
     color:var(--accent);
 
     font-weight:700;
+
+}
+
+
+.defect-overview {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px 8%;
+    text-align: center;
+}
+
+.defect-overview h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.defect-overview > p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.defect-overview ul {
+    display: inline-block;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.defect-summary-grid {
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin:30px 0;
+
+}
+
+
+.defect-summary-grid div {
+
+    background:#f8fafc;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+
+}
+
+
+.defect-summary-grid strong {
+
+    display:block;
+    color:var(--primary);
+    margin-bottom:8px;
+
+}
+
+
+@media(max-width:768px){
+
+.defect-summary-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+.defect-summary-grid {
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin:30px 0;
+
+}
+
+
+.defect-summary-grid div {
+
+    background:#f8fafc;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+
+}
+
+
+.defect-summary-grid strong {
+
+    display:block;
+    color:var(--primary);
+    margin-bottom:8px;
+
+}
+
+
+@media(max-width:768px){
+
+.defect-summary-grid {
+
+    grid-template-columns:1fr;
+
+}
 
 }
 

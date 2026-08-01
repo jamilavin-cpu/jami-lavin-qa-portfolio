@@ -54,60 +54,35 @@ Jami Lavin
         </p>
 
         <h1>
-            Defect Report
+            Defect Reports
         </h1>
 
         <p class="qa-intro">
-            Representative defect documentation demonstrating how I communicate issues,
-            provide reproducible steps, and support efficient resolution.
+            Azure DevOps-style defect documentation demonstrating defect lifecycle management,
+root cause analysis, validation, and regression coverage.
         </p>
 
     </div>
 
 </section>
 
+<section class="defect-overview">
 
 
-<section class="defect-work-item">
-
-<div class="defect-title">
-
-<div>
-<p class="bug-id">🐞 BUG-1045</p>
 
 <h2>
-Reward Status Does Not Update After Processing
+Defect Management Overview
 </h2>
 
-</div>
 
-<div class="defect-status">
-<span class="severity high">
-Severity 2 - High
-</span>
+<p>
+Examples of Azure DevOps-style defect documentation demonstrating defect lifecycle management,
+risk assessment, root cause analysis, and regression validation.
+</p>
 
-<span class="state">
-Resolved
-</span>
-
-</div>
-
-</div>
 
 
 <div class="work-item-grid">
-
-
-<div>
-<strong>Work Item Type</strong>
-<p>Bug</p>
-</div>
-
-
-<div>
-<strong>Area Path</strong>
-<p>Reward Management</p>
-</div>
 
 
 <div>
@@ -117,10 +92,124 @@ Resolved
 
 
 <div>
-<strong>Priority</strong>
-<p>High</p>
+<strong>Defects Documented</strong>
+<p>5</p>
 </div>
 
+
+<div>
+<strong>Critical Defects</strong>
+<p>2</p>
+</div>
+
+
+<div>
+<strong>High Defects</strong>
+<p>2</p>
+</div>
+
+
+<div>
+<strong>Medium Defects</strong>
+<p>1</p>
+</div>
+
+
+<div>
+<strong>Testing Focus</strong>
+<p>Functional, Regression, UAT</p>
+</div>
+
+
+</div>
+
+
+
+<h3>
+Defect Categories
+</h3>
+
+
+<ul>
+
+<li>Workflow and Transaction Validation</li>
+
+<li>Data Integrity and Synchronization</li>
+
+<li>Integration Testing</li>
+
+<li>Business Rule Validation</li>
+
+<li>Role-Based Access Testing</li>
+
+</ul>
+
+
+</section>
+
+
+<details class="defect-work-item">
+
+<summary class="defect-title">
+
+    <div class="defect-info">
+
+        <p class="bug-id">
+            🐞 BUG-1048
+        </p>
+
+        <h2>
+            Duplicate Reward Redemption After Transaction Timeout
+        </h2>
+
+    </div>
+
+    <div class="defect-status">
+
+        <span class="severity high">
+            Severity 1 - Critical
+        </span>
+
+        <span class="state">
+            Closed
+        </span>
+
+    </div>
+
+</summary>
+
+
+<div class="defect-summary-grid">
+
+    <div>
+        <strong>Work Item Type</strong>
+        <p>Bug</p>
+    </div>
+
+    <div>
+        <strong>Assigned To</strong>
+        <p>Application Development Team</p>
+    </div>
+
+    <div>
+        <strong>Area Path</strong>
+        <p>Reward Management</p>
+    </div>
+
+    <div>
+        <strong>Iteration Path</strong>
+        <p>Sprint 13</p>
+    </div>
+
+    <div>
+        <strong>Priority</strong>
+        <p>1 - High</p>
+    </div>
+
+    <div>
+        <strong>Tool</strong>
+        <p>Azure DevOps</p>
+    </div>
 
 </div>
 
@@ -130,12 +219,10 @@ Resolved
 <h3>Description</h3>
 
 <p>
-Reward status does not update after successful processing. 
-The transaction completes successfully, but the application continues displaying an outdated status.
+When a reward redemption request experienced a timeout during transaction processing, users could resubmit the request and create a duplicate redemption record.
 </p>
 
 </div>
-
 
 
 <div class="defect-section">
@@ -151,16 +238,214 @@ The transaction completes successfully, but the application continues displaying
 </div>
 
 
-
 <div class="defect-section">
 
 <h3>Steps to Reproduce</h3>
 
 <ol>
 <li>Log into the Reward Management application.</li>
-<li>Search for a customer with a completed reward transaction.</li>
-<li>Navigate to reward details.</li>
-<li>Review displayed reward status.</li>
+<li>Select an available reward.</li>
+<li>Submit a redemption request.</li>
+<li>Simulate a transaction timeout during processing.</li>
+<li>Retry the redemption request.</li>
+<li>Review reward transaction history.</li>
+</ol>
+
+</div>
+
+
+<div class="defect-section">
+
+<h3>Expected Result</h3>
+
+<p>
+The system should prevent duplicate redemption requests and maintain a single valid transaction record.
+</p>
+
+</div>
+
+
+<div class="defect-section">
+
+<h3>Actual Result</h3>
+
+<p>
+A second redemption record was created after the user retried the transaction.
+</p>
+
+</div>
+
+
+<div class="defect-section">
+
+<h3>Business Impact</h3>
+
+<p>
+Duplicate transactions could result in inaccurate reward balances, financial reconciliation issues, and additional manual correction efforts.
+</p>
+
+</div>
+
+
+<div class="defect-section">
+
+<h3>Root Cause</h3>
+
+<p>
+The application did not properly handle duplicate transaction requests after a timeout event.
+</p>
+
+</div>
+
+
+<div class="defect-section">
+
+<h3>Resolution Notes</h3>
+
+<p>
+Development implemented duplicate transaction handling logic. QA validated the fix through negative testing, regression testing, and transaction workflow validation.
+</p>
+
+</div>
+
+
+<div class="defect-section">
+
+<h3>Related Test Cases</h3>
+
+<p>
+TC-004 Reward Redemption Validation
+<br>
+TC-006 Transaction Error Handling
+</p>
+
+</div>
+
+</details>
+
+
+<details class="defect-work-item">
+
+<summary class="defect-title">
+
+<div class="defect-info">
+
+<p class="bug-id">
+🐞 BUG-1052
+</p>
+
+<h2>
+Order Status Not Updated After Fulfillment Completion
+</h2>
+
+</div>
+
+
+<div class="defect-status">
+
+<span class="severity high">
+Severity 2 - High
+</span>
+
+<span class="state">
+Closed
+</span>
+
+</div>
+
+</summary>
+
+
+
+<div class="defect-summary-grid">
+
+
+<div>
+<strong>Work Item Type</strong>
+<p>Bug</p>
+</div>
+
+
+<div>
+<strong>Assigned To</strong>
+<p>Integration Services Team</p>
+</div>
+
+
+<div>
+<strong>Area Path</strong>
+<p>Store Ordering Platform</p>
+</div>
+
+
+<div>
+<strong>Iteration Path</strong>
+<p>Sprint 15</p>
+</div>
+
+
+<div>
+<strong>Priority</strong>
+<p>1 - High</p>
+</div>
+
+
+<div>
+<strong>Tool</strong>
+<p>Azure DevOps</p>
+</div>
+
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Description</h3>
+
+<p>
+Customer orders successfully completed the ordering workflow; however, the customer-facing application
+did not reflect the updated fulfillment status after processing was completed.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Environment</h3>
+
+<ul>
+
+<li>Windows 11</li>
+<li>Google Chrome</li>
+<li>QA Environment</li>
+<li>Integrated Ordering Systems</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Steps to Reproduce</h3>
+
+<ol>
+
+<li>Create a customer order through the ordering application.</li>
+
+<li>Verify the order is successfully submitted.</li>
+
+<li>Process fulfillment through the backend ordering workflow.</li>
+
+<li>Refresh the customer order history page.</li>
+
+<li>Review the displayed order status.</li>
+
 </ol>
 
 </div>
@@ -172,7 +457,7 @@ The transaction completes successfully, but the application continues displaying
 <h3>Expected Result</h3>
 
 <p>
-Reward status should display <strong>Available</strong> after successful processing.
+Customer-facing order status should update to reflect the current fulfillment state after processing completion.
 </p>
 
 </div>
@@ -184,7 +469,7 @@ Reward status should display <strong>Available</strong> after successful process
 <h3>Actual Result</h3>
 
 <p>
-Reward status remains <strong>Pending</strong> after processing completes.
+Order status remained in the previous state despite successful fulfillment processing.
 </p>
 
 </div>
@@ -196,7 +481,19 @@ Reward status remains <strong>Pending</strong> after processing completes.
 <h3>Business Impact</h3>
 
 <p>
-Incorrect status information may cause duplicate customer requests and increase support workload.
+Customers received inaccurate order information, and support teams lacked visibility into the current order lifecycle.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Root Cause</h3>
+
+<p>
+Status updates were not being correctly synchronized between the fulfillment workflow and the customer-facing application.
 </p>
 
 </div>
@@ -208,99 +505,432 @@ Incorrect status information may cause duplicate customer requests and increase 
 <h3>Resolution Notes</h3>
 
 <p>
-Development corrected the status mapping issue. QA verified the fix through functional and regression testing.
+Development corrected the status update workflow. QA verified the fix through end-to-end workflow testing,
+integration validation, and regression testing.
 </p>
 
 </div>
 
 
-</section>
+
+<div class="defect-section">
+
+<h3>Related Test Cases</h3>
+
+<p>
+TC-007 Order Submission Workflow Validation
+<br>
+TC-008 Fulfillment Status Verification
+</p>
+
+</div>
 
 
-<section class="artifact">
+</details>
 
-<h2>Environment</h2>
+<details class="defect-work-item">
+
+<summary class="defect-title">
+
+      <div class="defect-info">
+
+<p class="bug-id">
+🐞 BUG-1057
+</p>
+
+<h2>
+Required Field Validation Missing During Submission
+</h2>
+
+</div>
+
+
+<div class="defect-status">
+
+<span class="severity medium">
+Severity 3 - Medium
+</span>
+
+<span class="state">
+Closed
+</span>
+
+</div>
+
+</summary>
+
+
+
+<div class="work-item-grid">
+
+
+<div>
+<strong>Work Item Type</strong>
+<p>Bug</p>
+</div>
+
+
+<div>
+<strong>Assigned To</strong>
+<p>Application Development Team</p>
+</div>
+
+
+<div>
+<strong>Area Path</strong>
+<p>Enterprise Application</p>
+</div>
+
+
+<div>
+<strong>Iteration Path</strong>
+<p>Sprint 16</p>
+</div>
+
+
+<div>
+<strong>Priority</strong>
+<p>2 - Medium</p>
+</div>
+
+
+<div>
+<strong>Tool</strong>
+<p>Azure DevOps</p>
+</div>
+
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Description</h3>
+
+<p>
+Users were able to submit a business workflow without completing required information fields.
+The application accepted incomplete records that did not meet documented business requirements.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Environment</h3>
 
 <ul>
 
 <li>Windows 11</li>
-
 <li>Google Chrome</li>
-
 <li>QA Environment</li>
 
 </ul>
 
-</section>
+</div>
 
 
 
-<section class="artifact">
+<div class="defect-section">
 
-<h2>Steps to Reproduce</h2>
+<h3>Steps to Reproduce</h3>
 
 <ol>
 
-<li>Log into the Reward Management application.</li>
+<li>Navigate to the business submission workflow.</li>
 
-<li>Search for a customer whose reward has completed processing.</li>
+<li>Leave required fields incomplete.</li>
 
-<li>Open the reward details page.</li>
+<li>Select Submit.</li>
 
-<li>Observe the reward status displayed.</li>
+<li>Review the system response.</li>
 
 </ol>
 
-</section>
+</div>
 
 
 
-<section class="artifact">
+<div class="defect-section">
 
-<h2>Expected Result</h2>
-
-<p>
-Reward status should display <strong>Available</strong> after successful processing.
-</p>
-
-</section>
-
-
-
-<section class="artifact">
-
-<h2>Actual Result</h2>
+<h3>Expected Result</h3>
 
 <p>
-Reward status remains <strong>Pending</strong> even though processing has completed successfully.
+The system should prevent submission and display validation messages identifying incomplete required fields.
 </p>
 
-</section>
+</div>
 
 
 
-<section class="artifact">
+<div class="defect-section">
 
-<h2>Business Impact</h2>
+<h3>Actual Result</h3>
 
 <p>
-Support representatives cannot accurately determine whether a customer's reward is available, resulting in confusion and additional customer inquiries.
+The workflow submitted successfully despite required information being missing.
 </p>
 
-</section>
+</div>
 
 
 
-<section class="artifact">
+<div class="defect-section">
 
-<h2>Resolution</h2>
+<h3>Business Impact</h3>
 
 <p>
-Development corrected the status mapping between the processing system and the application. The fix was verified through regression testing prior to release.
+Incomplete records may create downstream processing delays, manual corrections, and inaccurate reporting.
 </p>
 
-</section>
+</div>
 
+
+
+<div class="defect-section">
+
+<h3>Root Cause</h3>
+
+<p>
+Required field validation rules were not applied consistently across the submission workflow.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Resolution Notes</h3>
+
+<p>
+Development implemented additional validation rules. QA verified the correction through functional testing,
+negative testing, and regression validation.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Related Test Cases</h3>
+
+<p>
+TC-009 Required Field Validation
+<br>
+TC-010 Submission Workflow Regression
+</p>
+
+</div>
+
+
+</details>
+
+<details class="defect-work-item">
+
+<summary class="defect-title">
+
+<div class="defect-info">
+
+<p class="bug-id">
+🐞 BUG-1061
+</p>
+
+<h2>
+Unauthorized Access to Restricted Functionality
+</h2>
+
+</div>
+
+
+<div class="defect-status">
+
+<span class="severity high">
+Severity 1 - Critical
+</span>
+
+<span class="state">
+Closed
+</span>
+
+</div>
+
+</summary>
+
+
+
+<div class="work-item-grid">
+
+
+<div>
+<strong>Work Item Type</strong>
+<p>Bug</p>
+</div>
+
+
+<div>
+<strong>Assigned To</strong>
+<p>Platform Development Team</p>
+</div>
+
+
+<div>
+<strong>Area Path</strong>
+<p>Enterprise Application</p>
+</div>
+
+
+<div>
+<strong>Iteration Path</strong>
+<p>Sprint 17</p>
+</div>
+
+
+<div>
+<strong>Priority</strong>
+<p>1 - High</p>
+</div>
+
+
+<div>
+<strong>Tool</strong>
+<p>Azure DevOps</p>
+</div>
+
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Description</h3>
+
+<p>
+Users assigned a limited access role were able to access functionality intended only for elevated permissions.
+The application did not properly enforce role-based access restrictions.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Environment</h3>
+
+<ul>
+
+<li>Windows 11</li>
+<li>Google Chrome</li>
+<li>QA Environment</li>
+
+<li>Role-Based Access Configuration</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Steps to Reproduce</h3>
+
+<ol>
+
+<li>Log into the application using a restricted user role.</li>
+
+<li>Navigate to administrator-only functionality.</li>
+
+<li>Select the restricted feature.</li>
+
+<li>Review the system response.</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Expected Result</h3>
+
+<p>
+Users without appropriate permissions should be prevented from accessing restricted functionality and receive an authorization message.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Actual Result</h3>
+
+<p>
+Restricted functionality was accessible to users without the required permissions.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Business Impact</h3>
+
+<p>
+Unauthorized access could expose restricted information and allow users to perform actions outside their assigned responsibilities.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Root Cause</h3>
+
+<p>
+Permission validation was not consistently enforced within the application workflow.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Resolution Notes</h3>
+
+<p>
+Development updated role-based access validation. QA verified the fix through permission testing,
+negative testing, and regression validation.
+</p>
+
+</div>
+
+
+
+<div class="defect-section">
+
+<h3>Related Test Cases</h3>
+
+<p>
+TC-011 Role-Based Access Validation
+<br>
+TC-012 Security Regression Testing
+</p>
+
+</div>
+
+
+</details>
 
 
 <section class="artifact">
