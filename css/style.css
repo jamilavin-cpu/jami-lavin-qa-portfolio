@@ -589,7 +589,7 @@ header {
 
 .qa-card {
     background: white;
-    padding: 35px;
+    padding: 30px;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,.05);
     transition: .3s;
@@ -617,7 +617,7 @@ header {
 
 .project-card {
     background: white;
-    padding: 35px;
+    padding: 30px;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,.05);
     border-top: 4px solid var(--accent);
@@ -669,8 +669,8 @@ header {
 }
 
 .qa-process {
-    max-width: 850px;
-    margin: 40px auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .process-step {
@@ -694,6 +694,58 @@ header {
 
 .process-step p {
     line-height: 1.7;
+}
+
+/* QA Lab page layout */
+
+.qa-lab-page-container {
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+.qa-lab-hero {
+    text-align: center;
+}
+
+.qa-lab-section {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0;
+}
+
+.qa-lab-section .section-title {
+    margin-bottom: 40px;
+}
+
+.qa-lab-page-container .project-grid {
+    width: 100%;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.qa-lab-page-container .qa-dashboard,
+.qa-lab-page-container .skills-grid {
+    width: 100%;
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.qa-lab-page-container .skill-card {
+    padding: 28px 30px;
+}
+
+@media (min-width: 1000px) {
+
+    .qa-lab-page-container .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .qa-lab-page-container .qa-dashboard,
+    .qa-lab-page-container .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* =========================================================
@@ -1388,10 +1440,47 @@ footer {
     color: var(--accent);
 }
 
+.resume-page-container {
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+.resume-header {
+    text-align: center;
+}
+
+.resume-header .section-title {
+    margin-bottom: 20px;
+}
+
+.resume-summary-section,
 .resume-section {
-    padding: 60px 8%;
-    max-width: 900px;
-    margin: auto;
+    width: 100%;
+    max-width: 1100px;
+    margin: 70px auto 0;
+}
+
+.resume-summary-section h2,
+.resume-section > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resume-summary {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 35px;
+    background: white;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.resume-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .resume-section p,
@@ -1400,15 +1489,23 @@ footer {
     line-height: 1.7;
 }
 
-.resume-section li {
-    margin-bottom: 12px;
+.resume-highlights {
+    max-width: 900px;
 }
 
-.resume-summary {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.7;
-    text-align: center;
+.resume-highlights ul {
+    background: white;
+    padding: 35px 45px 35px 65px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.resume-highlights li {
+    margin-bottom: 14px;
+}
+
+.resume-highlights li:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================================================
@@ -1505,6 +1602,43 @@ footer {
     .about-image img {
         max-width: 280px;
     }
+/*qa lab*/
+    .qa-lab-page-container {
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+.qa-lab-section {
+    margin-top: 50px;
+}
+
+.qa-lab-page-container .project-grid,
+.qa-lab-page-container .qa-dashboard,
+.qa-lab-page-container .skills-grid {
+    grid-template-columns: 1fr;
+}
+/*resume*/
+    .resume-page-container {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .resume-summary-section,
+    .resume-section {
+        margin-top: 50px;
+    }
+
+    .resume-summary {
+        padding: 25px;
+    }
+
+    .resume-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-highlights ul {
+        padding: 28px 28px 28px 48px;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -1535,5 +1669,234 @@ footer {
         max-width: 1200px;
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+
+
+
+/* =========================================================
+   Unified Page Layout System
+   Keeps every interior page aligned to the same desktop width
+   while preserving readable component widths and mobile flow.
+========================================================= */
+
+:root {
+    --content-width: 1200px;
+    --content-gutter: 40px;
+    --section-space: 80px;
+}
+
+.page-container {
+    width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2)));
+    margin: 0 auto;
+}
+
+.page-container > section {
+    width: 100%;
+}
+
+/* About */
+.about-page-container > .about {
+    padding: var(--section-space) 0;
+}
+
+.about-page-container > .about-intro {
+    padding-bottom: 35px;
+}
+
+.about-page-container > .quality-approach {
+    padding-top: 35px;
+}
+
+.about-page-container .about-content {
+    width: 100%;
+    max-width: none;
+}
+
+/* Career */
+.career-page-container > .experience-page {
+    width: 100%;
+    padding: var(--section-space) 0;
+}
+
+.career-page-container > .leadership-section {
+    padding-top: 35px;
+}
+
+.career-page-container .experience-card,
+.career-page-container .career-cards,
+.career-page-container .leadership-section {
+    width: 100%;
+    max-width: none;
+}
+
+.career-page-container .section-title > p:not(.section-label) {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.career-page-container .volunteer-role,
+.career-page-container .leadership-section > h3,
+.career-page-container .leadership-section > p {
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* QA Lab */
+.qa-lab-page-container > section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.qa-lab-page-container > .qa-lab-hero,
+.qa-lab-page-container > .qa-approach,
+.qa-lab-page-container > .projects,
+.qa-lab-page-container > .qa-artifacts,
+.qa-lab-page-container > .skills {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+}
+
+/* Resume */
+.resume-page-container > .resume {
+    padding: var(--section-space) 0 35px;
+}
+
+.resume-page-container .resume-section {
+    width: 100%;
+    max-width: 1000px;
+    padding: 45px 0;
+    margin: 0 auto;
+}
+
+.resume-page-container .resume-summary {
+    max-width: 850px;
+}
+
+/* Contact */
+.contact-page-container > .contact {
+    padding: var(--section-space) 0;
+}
+
+/* Case studies */
+.case-study-page-container > .case-study {
+    padding: var(--section-space) 0 35px;
+}
+
+.case-study-page-container .case-section {
+    width: 100%;
+    max-width: none;
+    margin: 45px auto;
+    padding: 20px 0;
+}
+
+.case-study-page-container .case-section > p,
+.case-study-page-container .case-section > ul {
+    max-width: 950px;
+}
+
+.case-study-page-container .case-section > p,
+.case-study-page-container .case-section > ul,
+.case-study-page-container .case-section > h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-study-page-container .case-section > h2 {
+    max-width: 950px;
+}
+
+.case-study-page-container .case-grid {
+    width: 100%;
+}
+
+.case-study-page-container > .hero-buttons {
+    margin-top: 10px;
+}
+
+/* Test cases and defects */
+.test-page-container > .artifact-hero,
+.defect-page-container > .artifact-hero {
+    padding: var(--section-space) 0 35px;
+}
+
+.test-page-container > .test-cases {
+    padding: 25px 0 45px;
+}
+
+.test-page-container > .case-section {
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.defect-page-container > .defect-overview {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.defect-page-container > .defect-work-item,
+.test-page-container .test-work-item {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Artifact pages that use the general page container */
+.page-container > .artifact-hero {
+    width: 100%;
+}
+
+/* Consistent navigation width on large screens */
+.navbar {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --content-gutter: 20px;
+        --section-space: 60px;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .navbar {
+        width: calc(100% - 40px);
+    }
+
+    .page-container {
+        width: calc(100% - 40px);
+    }
+
+    .about-page-container > .about-intro,
+    .about-page-container > .quality-approach,
+    .career-page-container > .leadership-section {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .case-study-page-container .case-section {
+        margin: 25px auto;
+        padding: 15px 0;
+    }
+
+    .case-study-page-container .case-grid,
+    .career-page-container .career-cards .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
