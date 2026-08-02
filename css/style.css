@@ -157,6 +157,23 @@ header {
     margin-top: 40px;
 }
 
+.experience-summary {
+    margin-top: 45px;
+}
+
+.experience-summary h2 {
+    margin-bottom: 25px;
+}
+
+.career-highlight-content h3 {
+    margin-bottom: 8px;
+}
+
+.career-highlight-content p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
 .volunteer-spacer {
     height: 40px;
 }
@@ -199,6 +216,45 @@ header {
 
 .career-page-container .leadership-section {
     padding: 40px 0 80px;
+}
+
+.recommendation-section blockquote {
+    font-size: 22px;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--primary);
+    border-left: 4px solid var(--accent);
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.recommendation-author {
+    margin-top: 20px;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* Recommendation */
+
+.recommendation-section blockquote {
+    font-size: 22px;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--primary);
+    border-left: 4px solid var(--accent);
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.recommendation-author {
+    margin-top: 20px;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.recommendation-section .hero-buttons {
+    justify-content: flex-start;
+    margin-top: 30px;
 }
 
 /* =========================================================
@@ -742,11 +798,15 @@ header {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .qa-lab-page-container .qa-dashboard,
-    .qa-lab-page-container .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.qa-lab-page-container .qa-dashboard {
+    grid-template-columns: repeat(3, 1fr);
 }
+
+.qa-lab-page-container .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+    }
+
 
 /* =========================================================
    Footer
